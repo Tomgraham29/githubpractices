@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>git merging</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h2 id="understanding-branching-in-git">Understanding Branching in Git</h2>
+<h3 id="what-is-a-branch">What is a Branch?</h3>
+<p>In Git, a branch is a lightweight, movable pointer to a commit. The default branch is usually named “master” but can be changed to “main” or another name. Branching allows you to diverge from the main line of development and work on different features or bug fixes independently.</p>
+<h3 id="why-branching-is-useful">Why Branching is Useful?</h3>
+<ol>
+<li>
+<p><strong>Isolation of Work:</strong> Each branch represents an independent line of development. This isolation allows multiple features or bug fixes to be developed simultaneously without affecting each other.</p>
+</li>
+<li>
+<p><strong>Collaboration:</strong> Branching facilitates collaboration within a team. Different team members can work on separate branches and later merge their changes.</p>
+</li>
+<li>
+<p><strong>Feature Development:</strong> You can create branches for specific features or enhancements. This makes it easier to manage and track changes related to a particular functionality.</p>
+</li>
+<li>
+<p><strong>Bug Fixing:</strong> Branches are useful for isolating bug fixes. You can create a branch to address a bug without interfering with ongoing feature development.</p>
+</li>
+</ol>
+<h3 id="basic-branching-workflow">Basic Branching Workflow</h3>
+<h4 id="creating-a-branch">Creating a Branch</h4>
+<p>To create a new branch, use the <code>git branch</code> command:</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">git</span> branch feature_branch
+</code></pre>
+<p>To switch to the newly created branch, use <code>git checkout</code> or <code>git switch</code>:</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">git</span> checkout feature_branch
+<span class="token comment"># OR</span>
+<span class="token function">git</span> switch feature_branch
+</code></pre>
+<p>You can combine branch creation and switching in one command:</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">git</span> checkout -b feature_branch
+<span class="token comment"># OR</span>
+<span class="token function">git</span> switch -c feature_branch
+</code></pre>
+<h4 id="making-changes-on-a-branch">Making Changes on a Branch</h4>
+<p>After switching to a branch, any changes you make will be isolated to that branch. You can add, commit, and push changes as usual.</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">git</span> add <span class="token keyword">.</span>
+<span class="token function">git</span> commit -m <span class="token string">"Implemented feature X"</span>
+<span class="token function">git</span> push origin feature_branch
+</code></pre>
+<h4 id="merging-changes">Merging Changes</h4>
+<p>Once you’ve completed the work on a branch, you can merge it back into the main branch (e.g., master or main). First, switch to the branch you want to merge into:</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">git</span> checkout master
+<span class="token comment"># OR</span>
+<span class="token function">git</span> switch main
+</code></pre>
+<p>Then, merge the feature branch:</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">git</span> merge feature_branch
+</code></pre>
+<h3 id="handling-merge-conflicts">Handling Merge Conflicts</h3>
+<p>In some cases, Git might not be able to automatically merge changes, resulting in a merge conflict. When this happens, Git will mark the conflicted areas in the affected files. You need to manually resolve these conflicts before finalizing the merge.</p>
+<h4 id="example-merge-conflict-resolution">Example Merge Conflict Resolution:</h4>
+<ol>
+<li>
+<p>Open the conflicted file in a text editor.</p>
+</li>
+<li>
+<p>Locate the conflict markers (&lt;&lt;&lt;&lt;&lt;&lt;&lt;, =======, &gt;&gt;&gt;&gt;&gt;&gt;&gt;).</p>
+</li>
+<li>
+<p>Manually edit the file to resolve conflicts.</p>
+</li>
+<li>
+<p>Mark the conflicts as resolved:</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">git</span> add conflicted_file.txt
+</code></pre>
+</li>
+<li>
+<p>Continue the merge:</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">git</span> merge --continue
+</code></pre>
+</li>
+</ol>
+<h3 id="deleting-a-branch">Deleting a Branch</h3>
+<p>Once a branch is merged and you no longer need it, you can delete it:</p>
+<pre class=" language-bash"><code class="prism  language-bash"><span class="token function">git</span> branch -d feature_branch
+</code></pre>
+<h3 id="conclusion">Conclusion</h3>
+<p>Branching is a powerful feature in Git that allows for flexible and collaborative development. It enables you to work on multiple aspects of your project simultaneously, isolate changes, and merge them back together once they are ready. Understanding branching is key to effective version control and collaborative software development using Git.</p>
+</div>
+</body>
+
+</html>

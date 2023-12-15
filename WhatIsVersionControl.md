@@ -44,6 +44,7 @@ Version control is a system that records changes to a file or a set of files ove
 6. **Pull Requests:**
    - Collaborators can propose changes via pull requests, which are reviewed before merging.
 
+![gitworkflow](git-workflow.png)
 ## Version Control vs. Remote Backups:
 
 ### Differences:

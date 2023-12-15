@@ -1,4 +1,4 @@
-Certainly! Here is a list of basic Git commands along with their use cases and examples to help you use Git effectively:
+Here is a list of basic Git commands along with their use cases and examples to help you use Git effectively:
 
 ### 1. `git init`
 
